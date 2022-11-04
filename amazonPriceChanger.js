@@ -13,7 +13,10 @@
 (function() {
     'use strict';
 
-
-   $( ".a-price-whole" ).text("799.99");
+   var product = $("#productTitle").text();
+   var keyword = "Zenbook Pro 15";
+    if (product.includes(keyword)){
+        $( "#ppd .a-price-whole" ).text("799.99");
+    }
 
 })();
