@@ -13,8 +13,7 @@
 (function() {
     'use strict';
 
-    document.getElementsByClassName("a-price-whole").textContent="799.99";
 
-   // console.log( $( ".a-price-whole" ).text("799.99") )
+   $( ".a-price-whole" ).text("799.99");
 
 })();
