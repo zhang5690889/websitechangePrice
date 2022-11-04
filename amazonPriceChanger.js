@@ -14,9 +14,22 @@
     'use strict';
 
    var product = $("#productTitle").text();
+   var titleInMobile = $("#title").text();
+   var newValue = "799";
+
    var keyword = "Zenbook Pro 15";
-    if (product.includes(keyword)){
-        $( "#ppd .a-price-whole" ).text("799.99");
+    if (product.includes(keyword) || titleInMobile.includes(keyword)) {
+
+        console.log($( "#ppd .a-price-whole" ).contents())
+        $( "#ppd .a-price-whole" ).contents().each(function () {
+            this.nodeValue = newValue
+        })
+
+        $( "#productTitleGroupAnchor .a-price-whole" ).contents().each(function () {
+            this.nodeValue = newValue
+        }) //mobile view
     }
+
+
 
 })();
