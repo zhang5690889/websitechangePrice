@@ -31,6 +31,9 @@
 
             //var originalprice = $( "#ppd .a-price-whole" ).contents()[0].nodeValue
             //console.log(originalprice)
+            $("#twister_feature_div").remove()
+            $("#twister-plus-feature").remove()
+
 
             // destop view
             $( "#ppd .a-price-whole" ).contents().each(function () {
