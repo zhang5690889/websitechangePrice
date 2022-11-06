@@ -4,7 +4,7 @@
 // @version      0.1
 // @description  try to take over the world!
 // @author       You
-// @run-at document-end
+// @run-at document-start
 // @match        https://www.amazon.com/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=stackoverflow.com
 // @grant        none
@@ -14,23 +14,42 @@
 (function() {
     'use strict';
 
-   var product = $("#productTitle").text();
-   var titleInMobile = $("#title").text();
-  
-   var keywords = ["Zenbook Pro 15", "WF-1000XM4"];
-    var newValue = "799";
-    
-   if ( keywords.some( keyword => product.includes(keyword)) || keywords.some( keyword => titleInMobile.includes(keyword))) {
+    $("html").css("display","none");
 
-        $( "#ppd .a-price-whole" ).contents().each(function () {
-            this.nodeValue = newValue
-        })
+    window.addEventListener('load', function() {
 
-        $( "#productTitleGroupAnchor .a-price-whole" ).contents().each(function () {
-            this.nodeValue = newValue
-        }) //mobile view
-    }
+        var product = $("#productTitle").text();
+        var titleInMobile = $("#title").text();
+        var newValue = "799";
+
+        var keywords = ["Zenbook Pro 15", "WF-1000XM4"];
+
+        var oldString = "BEST NOTEBOOKS"
+        var newString = "Amazon.com"
+
+        if ( keywords.some( keyword => product.includes(keyword)) || keywords.some( keyword => titleInMobile.includes(keyword))) {
+
+            // destop view
+            $( "#ppd .a-price-whole" ).contents().each(function () {
+                this.nodeValue = newValue
+            })
+
+            $("#tabular_feature_div").html($("#tabular_feature_div").html().replaceAll(oldString, newString));
+
+
+            // mobile view
+            $( "#productTitleGroupAnchor .a-price-whole" ).contents().each(function () {
+                this.nodeValue = newValue
+            }) //mobile view
+        }
+
+        $("html").fadeIn(100);
+    // your code here
+    }, false);
+
+
 
 
 
 })();
+
