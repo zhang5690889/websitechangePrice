@@ -20,21 +20,25 @@
 
         var product = $("#productTitle").text();
         var titleInMobile = $("#title").text();
-        var newValue = "799";
+        var newValue = "699";
 
-        var keywords = ["Zenbook Pro 15", "WF-1000XM4"];
+        var keywords = ["Zenbook 14 Laptop", "WF-1000XM4"];
 
-        var oldString = "BEST NOTEBOOKS"
-        var newString = "Amazon.com"
+        var oldString = "Lucky Tech LLC (SN Recorded)"
+        var newString = "Amazon"
 
         if ( keywords.some( keyword => product.includes(keyword)) || keywords.some( keyword => titleInMobile.includes(keyword))) {
+
+            //var originalprice = $( "#ppd .a-price-whole" ).contents()[0].nodeValue
+            //console.log(originalprice)
 
             // destop view
             $( "#ppd .a-price-whole" ).contents().each(function () {
                 this.nodeValue = newValue
             })
 
-            $("#tabular_feature_div").html($("#tabular_feature_div").html().replaceAll(oldString, newString));
+
+             $("#sellerProfileTriggerId").text(newString);
 
 
             // mobile view
