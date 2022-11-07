@@ -20,12 +20,11 @@
 
         var product = $("#productTitle").text();
         var titleInMobile = $("#title").text();
-        var newValue = "699";
+        var newValue = "649";
 
-        var keywords = ["Zenbook 14 Laptop", "WF-1000XM4"];
+        var keywords = ["Zenbook 14 Laptop"];
 
-        var oldString = "Lucky Tech LLC (SN Recorded)"
-        var newString = "Amazon"
+        var newString = "Amazon.com"
 
         if ( keywords.some( keyword => product.includes(keyword)) || keywords.some( keyword => titleInMobile.includes(keyword))) {
 
@@ -34,6 +33,10 @@
             $("#twister_feature_div").remove()
             $("#twister-plus-feature").remove()
 
+            //change buyer option
+            $("#tabular-buybox div:first-child div:nth-child(2) div:first-child span:first-child").text(newString);
+
+
 
             // destop view
             $( "#ppd .a-price-whole" ).contents().each(function () {
@@ -41,7 +44,7 @@
             })
 
 
-             $("#sellerProfileTriggerId").text(newString);
+             $("#tabular-buybox #sellerProfileTriggerId").parent().text(newString);
 
 
             // mobile view
