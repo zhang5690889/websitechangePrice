@@ -22,7 +22,7 @@
         var titleInMobile = $("#title").text();
         var newValue = "649";
 
-        var keywords = ["Zenbook 14 Laptop"];
+        var keywords = ["TCL 65-Inch"];
 
         var newString = "Amazon.com"
 
@@ -34,7 +34,7 @@
             $("#twister-plus-feature").remove()
 
             //change buyer option
-            $("#tabular-buybox div:first-child div:nth-child(2) div:first-child span:first-child").text(newString);
+           // $("#tabular-buybox div:first-child div:nth-child(2) div:first-child span:first-child").text(newString);
 
 
 
@@ -48,9 +48,9 @@
 
 
             // mobile view
-            $( "#productTitleGroupAnchor .a-price-whole" ).contents().each(function () {
-                this.nodeValue = newValue
-            }) //mobile view
+           // $( "#productTitleGroupAnchor .a-price-whole" ).contents().each(function () {
+          //     this.nodeValue = newValue
+           // }) //mobile view
         }
 
         $("html").fadeIn(100);
