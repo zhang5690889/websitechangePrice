@@ -26,6 +26,11 @@
 
         var newString = "Amazon.com"
 
+        //list view path
+        console.log($(".a-price .a-price-whole:first").text());
+        $(".a-price .a-price-whole:first").text(newValue);
+
+
         if ( keywords.some( keyword => product.includes(keyword)) || keywords.some( keyword => titleInMobile.includes(keyword))) {
 
             //var originalprice = $( "#ppd .a-price-whole" ).contents()[0].nodeValue
